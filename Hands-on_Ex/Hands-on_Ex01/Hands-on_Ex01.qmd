@@ -1,0 +1,19 @@
+---
+title: "Hands-on Exercise 1"
+author: "EEEcy"
+---
+
+# Getting Started
+
+## Install and launch R Packages
+
+```{r}
+pacman::p_load(sf, tmap, tidyverse)
+```
+
+## import the data
+
+```{r}
+mpsz <- st_read(dsn = "D:/EEEcy/ISSS626-GAA/Hands-on_Ex/Hands-on_Ex01/data/geospatial", 
+                layer = "MP14_SUBZONE_WEB_PL")
+```
