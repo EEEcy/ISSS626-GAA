@@ -1,0 +1,21 @@
+---
+title: "In_class Exercie 1"
+author: "Caiying"
+date: "Aug 26 2024"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  message: false
+  freeze: true
+---
+
+### The code
+
+```{r}         
+pacman::p_load(sf, tmap, tidyverse, ggstatsplot)
+```
+```{r}         
+mpsz14_shp <- st_read(dsn = "data/", 
+                layer = "MP14_SUBZONE_WEB_PL")
+```

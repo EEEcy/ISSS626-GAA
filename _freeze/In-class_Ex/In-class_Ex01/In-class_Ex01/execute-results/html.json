@@ -1,0 +1,15 @@
+{
+  "hash": "beb33b0b0e6c043131f160a7f242382e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"In_class Exercie 1\"\nauthor: \"Caiying\"\ndate: \"Aug 26 2024\"\ndate-modified: \"last-modified\"\nexecute: \n  eval: true\n  echo: true\n  message: false\n  freeze: true\n---\n\n\n### The code\n\n\n::: {.cell}\n\n```{.r .cell-code}\npacman::p_load(sf, tmap, tidyverse, ggstatsplot)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nmpsz14_shp <- st_read(dsn = \"data/\", \n                layer = \"MP14_SUBZONE_WEB_PL\")\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nReading layer `MP14_SUBZONE_WEB_PL' from data source \n  `D:\\EEEcy\\ISSS626-GAA\\In-class_Ex\\In-class_Ex01\\data' using driver `ESRI Shapefile'\nSimple feature collection with 323 features and 15 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 2667.538 ymin: 15748.72 xmax: 56396.44 ymax: 50256.33\nProjected CRS: SVY21\n```\n\n\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

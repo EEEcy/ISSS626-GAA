@@ -2,7 +2,12 @@
 title: "Hands-on Exercise 1"
 
 author: "EEEcy"
-
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  message: false
+  freeze: true
 ---
 
 # Getting Started
@@ -124,20 +129,26 @@ mpsz3414 <- mpsz3414 %>%
 ```{R}
 pacman::p_load(sf, tmap, tidyverse)
 ```
+
 Importing Geospatial Data into R
+
 ```{R}
 mpsz <- st_read(dsn = "Hands-on_Ex01/data/geospatial", 
                 layer = "MP14_SUBZONE_WEB_PL")
 ```
+
 ```{R}
 mpsz
 ```
+
 Importing Attribute Data into R
+
 ```{R}
 popdata <- read_csv("Hands-on_Ex01/data/aspatial/respopagesextod2011to2020.csv")
 ```
-Data Preparation
-Data wrangling
+
+Data Preparation Data wrangling
+
 ```{R}
 popdata2020 <- popdata %>%
   filter(Time == 2020) %>%
@@ -174,13 +185,17 @@ mpsz_pop2020 <- left_join(mpsz, popdata2020,
 ```{R}
 write_rds(mpsz_pop2020, "Hands-on_Ex01/data/rds/mpszpop2020.rds")
 ```
+
 Plotting a choropleth map quickly by using qtm()
+
 ```{R}
 tmap_mode("plot")
 qtm(mpsz_pop2020, 
     fill = "DEPENDENCY")
 ```
+
 Creating a choropleth map by using tmap’s elements
+
 ```{R}
 tm_shape(mpsz_pop2020)+
   tm_fill("DEPENDENCY", 
@@ -200,12 +215,16 @@ tm_shape(mpsz_pop2020)+
   tm_credits("Source: Planning Sub-zone boundary from Urban Redevelopment Authorithy (URA)\n and Population data from Department of Statistics DOS", 
              position = c("left", "bottom"))
 ```
+
 Drawing a base map
+
 ```{R}
 tm_shape(mpsz_pop2020) +
   tm_polygons()
 ```
+
 Drawing a choropleth map using tm_polygons()
+
 ```{R}
 tm_shape(mpsz_pop2020)+
   tm_polygons("DEPENDENCY")
@@ -248,7 +267,9 @@ tm_shape(mpsz_pop2020)+
           breaks = c(0, 0.60, 0.70, 0.80, 0.90, 1.00)) +
   tm_borders(alpha = 0.5)
 ```
+
 Colour Scheme
+
 ```{R}
 tm_shape(mpsz_pop2020)+
   tm_fill("DEPENDENCY",
@@ -265,7 +286,9 @@ tm_shape(mpsz_pop2020)+
           palette = "-Greens") +
   tm_borders(alpha = 0.5)
 ```
+
 Map Layouts
+
 ```{R}
 tm_shape(mpsz_pop2020)+
   tm_fill("DEPENDENCY", 
